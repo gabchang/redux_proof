@@ -6,7 +6,8 @@
     "destructuring": true,
     "spread": true,
     "arrowFunctions": true,
-    "blockBindings": true
+    "blockBindings": true,
+    "modules": true
   },
   "plugins": [
     "react"

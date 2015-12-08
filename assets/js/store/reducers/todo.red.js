@@ -1,16 +1,22 @@
-import { ADD_TODO, COMPLETE_TODO, VisibilityFilters, SET_VISIBILITY_FILTER } from 'constants/todo.cst.js';
 import { combineReducers } from 'redux';
+import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER } from 'actions/action_types';
+import { VisibilityFilters } from 'app_constants';
 
 const { SHOW_ALL } = VisibilityFilters;
 const { assign } = Object;
 
+export const defaultState = {
+  todos: [],
+  visibilityFilter: SHOW_ALL
+};
+
 
 function visibilityFilter(state = SHOW_ALL, {type, filter}) {
   switch (type) {
-    case SET_VISIBILITY_FILTER:
-      return filter;
-    default:
-      return state;
+  case SET_VISIBILITY_FILTER:
+    return filter;
+  default:
+    return state;
   }
 }
 
@@ -34,6 +40,7 @@ function todos(state = [], {type, text, index}) {
     return state;
   }
 }
+
 
 export default combineReducers({
   todos,
