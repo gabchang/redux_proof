@@ -28,6 +28,10 @@ var config = {
     // publicPath: publicPath
   },
   resolve: {
+    modulesDirectories: [
+      'node_modules',
+      'js'
+    ],
     alias: {}
   },
 

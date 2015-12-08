@@ -10,19 +10,20 @@ export default ({
 }) => (
   reactStamp(React).compose({
     render() {
+      const { actions, visibleTodos, visibilityFilter } = this.props;
       return (
         <div className="container">
           <div className="row">
             <div className="col-sm-4 col-sm-offset-4">
               <TodoAdd
-                onAddClick={ getLoger('add todo') } />
+                onAddClick={ actions.addTodo } />
               <TodoList
                 Todo={Todo}
-                todos={todos}
-                onItemClick={ getLoger('todo clicked') } />
+                todos={visibleTodos}
+                onTodoClick={ actions.completeTodo } />
               <TodoFilter
-                filter="SHOW_ALL"
-                onFilterChange={ getLoger('filter change') }
+                filter={visibilityFilter}
+                onFilterChange={ actions.setVisibilityFilter }
                 VisibilityFilters={VisibilityFilters} />
             </div>
           </div>
@@ -30,19 +31,4 @@ export default ({
       );
     }
   })
-);
-
-function getLoger(type) {
-  return (text) => {console.log(type, text)};
-}
-
-var todos = [
-              {
-                text: 'Use Redux',
-                completed: true
-              },
-              {
-                text: 'Learn to connect it to React',
-                completed: false
-              }
-            ];
+)

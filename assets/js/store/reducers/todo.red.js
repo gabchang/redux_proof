@@ -1,5 +1,4 @@
-import { VisibilityFilters, SET_VISIBILITY_FILTER } from '../constants/todo_filter.cst.js';
-import { ADD_TODO, COMPLETE_TODO } from '../constants/todo.cst.js';
+import { ADD_TODO, COMPLETE_TODO, VisibilityFilters, SET_VISIBILITY_FILTER } from 'constants/todo.cst.js';
 import { combineReducers } from 'redux';
 
 const { SHOW_ALL } = VisibilityFilters;
@@ -21,7 +20,7 @@ function todos(state = [], {type, text, index}) {
   case ADD_TODO:
     return [
       ...state,
-      { text, completed: true }
+      { text, completed: false }
     ];
   case COMPLETE_TODO:
     return [

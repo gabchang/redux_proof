@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
-import createTodoAdd from './components/todo_add.jsx';
-import createTodoFilter from './components/todo_filter.jsx';
-import createTodoList from './components/todo_list.jsx';
-import createTodo from './components/todo.jsx';
-import createContainer from './containers/todo.cont.jsx';
+import { bindActionCreators } from 'redux';
+import createTodoAdd from 'apps/components/todo_add.jsx';
+import createTodoList from 'apps/components/todo_list.jsx';
+import createTodo from 'apps/components/todo.jsx';
+import createContainer from 'apps/containers/todo.cont.jsx';
+import createTodoFilter from 'apps/components/todo_filter.jsx';
+import actions from 'actions/actions';
+import { VisibilityFilters } from 'constants/todo.cst';
 
-export default (React, VisibilityFilters) => {
+const { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;
+
+export default (React) => {
   const TodoApp = createContainer({
     React,
     TodoAdd    : createTodoAdd(React),
@@ -15,7 +20,6 @@ export default (React, VisibilityFilters) => {
     VisibilityFilters
   });
 
-  const {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} = VisibilityFilters;
 
   function selectTodos(todos, filter) {
     switch (filter) {
@@ -35,5 +39,9 @@ export default (React, VisibilityFilters) => {
     }
   }
 
-  return connect(select)(TodoApp);
+  function mapDispatchToProps(dispatch) {
+    return { actions: bindActionCreators(actions, dispatch) };
+  }
+
+  return connect(select, mapDispatchToProps)(TodoApp);
 }

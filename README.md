@@ -5,6 +5,9 @@ Inspired by lot of literature and more particulary with
 
 Use Redux with react-stamp and try composition and [pure component factory](https://github.com/ericelliott/react-pure-component-starter).
 
+Try bootstrap 4 & scss
+
+
 Lots of thing todo:
 
 * find good directory structure

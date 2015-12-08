@@ -9,6 +9,6 @@ export default React => (
 
 function mapTodo(Todo, onTodoClick) {
   return function renderTodo(todo, index) {
-    return <Todo {...todo} key={index} onClick={onTodoClick} />
+    return <Todo {...todo} key={index} onClick={ () => onTodoClick(index) } />
   }
 }
