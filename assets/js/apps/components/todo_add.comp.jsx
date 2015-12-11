@@ -1,8 +1,14 @@
 import reactStamp from 'react-stamp';
 
-export default React => (
-  reactStamp(React).compose({
-    handleClick(e) {
+export default React => {
+  const { func } = React.PropTypes;
+
+  return reactStamp(React).compose({
+    propTypes: {
+      onAddClick: func.isRequired
+    },
+
+    handleClick(/*e*/) {
       const node = this.refs.input,
             text = node.value.trim();
 
@@ -16,7 +22,7 @@ export default React => (
           <div className="input-group">
             <input type="text" ref="input" className="form-control"/>
             <span className="input-group-btn">
-              <button onClick={this.handleClick.bind(this)} type="button" className="btn btn-secondary">
+              <button onClick={(e) => this.handleClick(e)} type="button" className="btn btn-secondary">
                 Add
               </button>
             </span>
@@ -24,5 +30,5 @@ export default React => (
         </div>
       );
     }
-  })
-);
+  });
+};

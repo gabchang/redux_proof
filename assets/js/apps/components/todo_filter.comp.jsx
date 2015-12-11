@@ -1,5 +1,7 @@
-export default React => (
-  ({ filter, onFilterChange, VisibilityFilters }) => {
+import { VisibilityFilters } from 'constants';
+
+export default React => {
+  const TodoFilter = ({ filter, onFilterChange }) => {
     return (
       <p>
         Show :
@@ -11,8 +13,21 @@ export default React => (
         { renderFilter(onFilterChange, filter, VisibilityFilters.SHOW_ACTIVE, 'Active') }
       </p>
     );
-  }
-);
+  };
+
+  const {
+    string, func
+  } = React.PropTypes;
+
+
+  TodoFilter.PropTypes = {
+    filter: string.isRequired,
+    onFilterChange: func.isRequired
+  };
+
+  return TodoFilter;
+};
+
 
 function renderFilter(onFilterChange, filter, nextFilter, name) {
   if (filter === nextFilter) return name;
@@ -22,12 +37,12 @@ function renderFilter(onFilterChange, filter, nextFilter, name) {
        onClick={getFilterHandler(nextFilter, onFilterChange)}>
        {name}
     </a>
-  )
+  );
 }
 
 function getFilterHandler(nextFilter, onFilterChange) {
   return function handleFilterChange(e) {
     e.preventDefault();
     onFilterChange(nextFilter);
-  }
+  };
 }
