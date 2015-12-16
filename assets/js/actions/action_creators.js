@@ -13,7 +13,15 @@ export function toggleCompleteTodo (index) {
   return { type: types.TOGGLE_COMPLETE_TODO, index };
 }
 
+export function completeAllTodo() {
+  return { type: types.COMPLETE_ALL_TODO };
+}
+
 
 export function updateTodo (index, text) {
   return { type: types.UPDATE_TODO, index, text };
+}
+
+export function clearCompletedTodo() {
+  return { type: types.CLEAR_COMPLETED_TODO };
 }

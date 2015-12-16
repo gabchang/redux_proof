@@ -3,33 +3,38 @@ import todo from './todo.comp.jsx';
 export default React => {
   const Todo = todo(React);
 
-  function TodoList({todos, onToggleCompleteClick }) {
+  const TodoList = ({todos, actions}) => {
     return (
-      <ul>
-        { todos.map( mapTodo(Todo, onToggleCompleteClick) ) }
+      <ul className="list-group">
+        { todos.map( mapTodo(Todo, actions) ) }
       </ul>
     );
-  }
+  };
 
   const {
-    array, func
+    array, func, shape
   } = React.PropTypes;
 
 
   TodoList.propTypes = {
-    todos                 : array.isRequired,
-    onToggleCompleteClick : func.isRequired
+    todos              : array.isRequired,
+    actions: shape({
+      toggleCompleteTodo : func.isRequired,
+      updateTodo         : func.isRequired
+    }).isRequired
   };
 
   return TodoList;
 };
 
-function mapTodo(Todo, onToggleCompleteClick) {
+function mapTodo(Todo, actions) {
   return function renderTodo(todo, index) {
     return (
-      <Todo {...todo}
-            key={index}
-            onClick={() => onToggleCompleteClick(index) } />
+      <Todo
+        {...todo}
+        todoId={index}
+        key={index}
+        actions={actions} />
     );
   };
 }
