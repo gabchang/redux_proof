@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { routeReducer } from 'redux-simple-router';
 import { VisibilityFilters } from 'constants';
 import todos from './todo.reduc';
 import visibilityFilter from './visibility_filter.reduc';
@@ -12,5 +13,6 @@ export const defaultState = {
 
 export default combineReducers({
   todos,
-  visibilityFilter
+  visibilityFilter,
+  routing: routeReducer
 });

@@ -1,4 +1,3 @@
-import reactStamp from 'react-stamp';
 import todoHeader from '../components/todo_header.comp.jsx';
 import todoFilter from '../components/todo_filter.comp.jsx';
 import todoList from '../components/todo_list.comp.jsx';
@@ -13,17 +12,51 @@ const { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;
 
 
 export default React => {
-  const {
-    func, array, string, shape, number
-  } = React.PropTypes;
 
   const TodoHeader = todoHeader(React);
   const TodoFilter = todoFilter(React);
   const TodoList = todoList(React);
 
-  const TodoContainer =  reactStamp(React).compose({
-    displayName: 'TodoContainer',
-    propTypes: {
+  const TodoPage = ({
+          visibleTodos,
+          visibilityFilter,
+          totalCount,
+          completedCount,
+          activeCount,
+          actions
+        }) => {
+  return (
+      <div className="container">
+        <div className="row todo-container">
+          <div className="col-sm-6 col-sm-offset-3">
+            <header>
+              <h1>Hello, Todos</h1>
+              <TodoHeader totalCount={totalCount}
+                actions={actions} />
+            </header>
+            <section>
+              <TodoList
+                todos={visibleTodos}
+                actions={actions} />
+            </section>
+            <footer>
+              <TodoFilter
+                filter={visibilityFilter}
+                activeCount={activeCount}
+                completedCount={completedCount}
+                actions={actions} />
+            </footer>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const {
+    func, array, string, shape, number
+  } = React.PropTypes;
+
+  TodoPage.propTypes = {
       actions: shape({
         addTodo             : func.isRequired,
         toggleCompleteTodo  : func.isRequired,
@@ -36,45 +69,9 @@ export default React => {
       totalCount       : number.isRequired,
       completedCount   : number.isRequired,
       activeCount      : number.isRequired
-    },
+    };
 
-    render() {
-      const { actions,
-              visibleTodos,
-              visibilityFilter,
-              totalCount,
-              activeCount,
-              completedCount
-            } = this.props;
-      return (
-        <div className="container">
-          <div className="row todo-container">
-            <div className="col-sm-6 col-sm-offset-3">
-              <header>
-                <h1>Hello, Todos</h1>
-                <TodoHeader totalCount={totalCount}
-                  actions={actions} />
-              </header>
-              <section>
-                <TodoList
-                  todos={visibleTodos}
-                  actions={actions} />
-              </section>
-              <footer>
-                <TodoFilter
-                  filter={visibilityFilter}
-                  activeCount={activeCount}
-                  completedCount={completedCount}
-                  actions={actions} />
-              </footer>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  });
-
-  return connect(mapStateToProps, mapDispatchToProps)(TodoContainer);
+  return connect(mapStateToProps, mapDispatchToProps)(TodoPage);
 };
 
 
