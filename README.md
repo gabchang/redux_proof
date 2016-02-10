@@ -5,17 +5,21 @@ Inspired by lot of literature and more particulary with
 
 Use Redux with react-stamp and try composition and [pure component factory](https://github.com/ericelliott/react-pure-component-starter).
 
+Refactored using [Dan Abramov "Getting Started with Redux"](https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree)
+
+
 Try bootstrap 4 & scss
 
 
 Lots of thing todo:
 
-* find good directory structure
-* find and use a router
+* find good directory structure [x]
+* find and use a router [x]
 * try universal javascript
 * tape as a test
 * hot reloading
 * rtype as type notation
+
 
 ## Tools
 

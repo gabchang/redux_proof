@@ -1,27 +1,45 @@
-import * as types from './action_types';
+import * as types from 'constants';
 
+export const setVisibilityFilter = (filter) => {
+  return {
+    type: types.SET_VISIBILITY_FILTER,
+    filter
+  };
+};
 
-export function setVisibilityFilter (filter) {
-  return { type: types.SET_VISIBILITY_FILTER, filter };
-}
+let nextTodoId = 0;
 
-export function addTodo (text) {
-  return { type: types.ADD_TODO, text };
-}
+export const addTodo = (text) => {
+  return {
+    type: types.ADD_TODO,
+    id  : nextTodoId++,
+    text
+  };
+};
 
-export function toggleCompleteTodo (index) {
-  return { type: types.TOGGLE_COMPLETE_TODO, index };
-}
+export const toggleCompleteTodo = (id) => {
+  return {
+    type: types.TOGGLE_COMPLETE_TODO,
+    id
+  };
+};
 
-export function completeAllTodo() {
-  return { type: types.COMPLETE_ALL_TODO };
-}
+export const completeAllTodo = () => {
+  return {
+    type: types.COMPLETE_ALL_TODO
+  };
+};
 
+export const updateTodo = (id, text) => {
+  return {
+    type: types.UPDATE_TODO,
+    id,
+    text
+  };
+};
 
-export function updateTodo (index, text) {
-  return { type: types.UPDATE_TODO, index, text };
-}
-
-export function clearCompletedTodo() {
-  return { type: types.CLEAR_COMPLETED_TODO };
-}
+export const clearCompletedTodo = () => {
+  return {
+    type: types.CLEAR_COMPLETED_TODO
+  };
+};
