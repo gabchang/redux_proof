@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Link from 'apps/components/todo/link.comp.jsx';
-import { setVisibilityFilter } from 'actions/action_creators';
+import Link from './components/link.comp.jsx';
+import { setVisibilityFilter } from 'actions/todo.act';
 
 const {
   string, func

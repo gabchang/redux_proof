@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterLink from 'apps/containers/todo/filter_link.cont.jsx';
+import FilterLink from '../filter_link.cont.jsx';
 import ClearButton from './clear_button.comp.jsx';
 import { VisibilityFilters } from 'constants';
 

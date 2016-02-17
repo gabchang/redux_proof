@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo, completeAllTodo } from 'actions/action_creators';
-import Header from 'apps/components/todo/header.comp.jsx';
+import { addTodo, completeAllTodo } from 'actions/todo.act';
+import Header from './components/header.comp.jsx';
 
 const mapStateToProps = ({
   todos

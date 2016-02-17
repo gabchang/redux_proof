@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import TodoList from 'apps/components/todo/list.comp.jsx';
+import TodoList from './components/list.comp.jsx';
 import { VisibilityFilters } from 'constants';
-import { updateTodo, toggleCompleteTodo } from 'actions/action_creators';
+import { updateTodo, toggleCompleteTodo } from 'actions/todo.act';
 
 const { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;
 

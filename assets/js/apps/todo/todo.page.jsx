@@ -1,6 +1,6 @@
-import Header from '../containers/todo/header.cont.jsx';
-import VisibleList from '../containers/todo/visible_list.cont.jsx';
-import Footer from '../containers/todo/footer.cont.jsx';
+import Header from './header.cont.jsx';
+import VisibleList from './visible_list.cont.jsx';
+import Footer from './footer.cont.jsx';
 
 const TodoPage = () => (
   <div className="container">

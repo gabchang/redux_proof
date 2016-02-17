@@ -1,15 +1,24 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from 'reducers';
 import freezeState from 'redux-freeze-state';
-import logger from 'middleware/logger.mdw';
+import thunkMiddleware from 'redux-thunk';
+import loggerMiddleware from 'middleware/logger.mdw';
 import { syncHistory } from 'react-router-redux';
 
-export default (history, initialState) => {
+export default (history, initialState = {}) => {
   // Sync dispatched route actions to the history
-  const reduxRouterMiddleware = syncHistory(history);
-  const createStoreWithMiddleware = applyMiddleware(logger, reduxRouterMiddleware)(createStore);
-  const store = createStoreWithMiddleware(freezeState(rootReducer), initialState);
+  const store = createStore(freezeState(rootReducer),
+    initialState,
+    compose(
+      applyMiddleware(
+        thunkMiddleware,
+        loggerMiddleware,
+        syncHistory(history)
+      ),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
+  );
 
   // hot replacement here
   return store;
-};
+}

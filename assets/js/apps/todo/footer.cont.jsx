@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { clearCompletedTodo } from 'actions/action_creators';
-import Footer from 'apps/components/todo/footer.comp.jsx';
+import { clearCompletedTodo } from 'actions/todo.act';
+import Footer from './components/footer.comp.jsx';
 
 
 const mapStateToProps = (state) => {
