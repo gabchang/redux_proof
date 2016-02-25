@@ -4,6 +4,7 @@ import freezeState from 'redux-freeze-state';
 import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'middleware/logger.mdw';
 import { syncHistory } from 'react-router-redux';
+import api from '../middleware/api.mdw';
 
 export default (history, initialState = {}) => {
   // Sync dispatched route actions to the history
@@ -12,6 +13,7 @@ export default (history, initialState = {}) => {
     compose(
       applyMiddleware(
         thunkMiddleware,
+        api,
         loggerMiddleware,
         syncHistory(history)
       ),

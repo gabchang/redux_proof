@@ -4,6 +4,7 @@ import { VisibilityFilters } from 'constants';
 import todos from './todo.reduc';
 import visibilityFilter from './visibility_filter.reduc';
 import { selectedReddit, postsByReddit } from './reddit.reduc';
+import github from './github.reduc';
 
 const { SHOW_ALL } = VisibilityFilters;
 
@@ -17,5 +18,6 @@ export default combineReducers({
   visibilityFilter,
   selectedReddit,
   postsByReddit,
+  github,
   routing: routeReducer
 });
