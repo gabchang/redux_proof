@@ -15,6 +15,7 @@ const App = ({ location, children }) => {
             <Link to="/todo" className={classnames('nav-item nav-link', {active: isActive(location, 'todo') })}>Todo</Link>
             <Link to="/reddit" className={classnames('nav-item nav-link', {active: isActive(location, 'reddit') })}>Reddit</Link>
             <Link to="/github" className={classnames('nav-item nav-link', {active: isActive(location,  'github') })}>Github</Link>
+            <Link to="/saga" className={classnames('nav-item nav-link', {active: isActive(location,  'saga') })}>Saga</Link>
           </div>
         </nav>
       </div>

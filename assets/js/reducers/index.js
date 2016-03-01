@@ -5,6 +5,7 @@ import todos from './todo.reduc';
 import visibilityFilter from './visibility_filter.reduc';
 import { selectedReddit, postsByReddit } from './reddit.reduc';
 import github from './github.reduc';
+import saga from './saga.reduc';
 
 const { SHOW_ALL } = VisibilityFilters;
 
@@ -19,5 +20,6 @@ export default combineReducers({
   selectedReddit,
   postsByReddit,
   github,
+  saga,
   routing: routeReducer
 });

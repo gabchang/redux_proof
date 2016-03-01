@@ -1,10 +1,16 @@
+/* global window */
 import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+
 import rootReducer from 'reducers';
 import freezeState from 'redux-freeze-state';
 import thunkMiddleware from 'redux-thunk';
-import loggerMiddleware from 'middleware/logger.mdw';
 import { syncHistory } from 'react-router-redux';
 import api from '../middleware/api.mdw';
+
+// import { watchAndLog } from 'actions/log.saga'
+import rootSaga from '../sagas'
+
 
 export default (history, initialState = {}) => {
   // Sync dispatched route actions to the history
@@ -14,7 +20,8 @@ export default (history, initialState = {}) => {
       applyMiddleware(
         thunkMiddleware,
         api,
-        loggerMiddleware,
+        createSagaMiddleware(rootSaga),
+        // loggerMiddleware,
         syncHistory(history)
       ),
       window.devToolsExtension ? window.devToolsExtension() : f => f

@@ -36,7 +36,7 @@ function callApi(endpoint, schema) {
       const camelizedJson = camelizeKeys(json);
       const nextPageUrl = getNextPageUrl(response);
       return R.merge(normalize(camelizedJson, schema), { nextPageUrl });
-    })
+    });
 }
 
 // We use this Normalizr schemas to transform API responses from a nested form
@@ -64,7 +64,7 @@ export const Schemas = {
   USER_ARRAY: arrayOf(userSchema),
   REPO: repoSchema,
   REPO_ARRAY: arrayOf(repoSchema)
-}
+};
 
 // Action key that carries API call info interpreted by this Redux middleware
 // note: symbol is only used in action call to identify this middleware
@@ -126,5 +126,5 @@ export default store => next => action => {
     .catch( error => next(actionWith({
       type: failureType,
       error: error.message || 'Something bad happened'
-    })))
-}
+    })));
+};

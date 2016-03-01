@@ -1,19 +1,23 @@
 {
-  "ecmaFeatures": {
-    "blockBindings": true,
-    "forOf": true,
-    "jsx": true,
-    "destructuring": true,
-    "spread": true,
-    "arrowFunctions": true,
-    "blockBindings": true,
-    "modules": true
+  "parserOptions": {
+    sourceType: "module",
+    ecmaVersion: 6,
+    # following replaced by ecmaVersion: 6
+    # "blockBindings": true,
+    # "forOf": true,
+    # "destructuring": true,
+    # "spread": true,
+    # "arrowFunctions": true,
+    # "modules": true
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "plugins": [
     "react"
   ],
   "rules": {
-    "semi": 1,
+    # "semi": 1,
     "no-extra-semi": 1,
     "semi-spacing": 1,
     "no-trailing-spaces": 1,
@@ -28,16 +32,16 @@
     "complexity": [1, 8],
     "max-depth": [1, 3],
     "no-unused-vars": [1, {"vars": "all", "args": "after-used"}],
-    "no-undef": 2
+    "no-undef": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-uses-react": 2
   },
   "env": {
     "node": true,
     "es6" : true
   },
   "globals": {
-    "rootRequire": true
-  },
-  "plugins": [
-    "react"
-  ]
+    "rootRequire": true,
+    "fetch" : true
+  }
 }

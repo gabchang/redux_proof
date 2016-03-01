@@ -1,4 +1,6 @@
+import "babel-polyfill";
 /* globals document */
+// import "babel-core/register";
 
 import React from 'react';
 import { render } from 'react-dom';
