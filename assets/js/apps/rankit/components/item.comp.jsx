@@ -40,11 +40,13 @@ const Item = reactStamp(React).compose({
   },
 
   _rankClick()  { this.setState({ ranking: true }) },
+
   _rankRemove() { 
     this.setState({ ranking: false });
     const {imdbID, onRankRemove} = this.props;
     onRankRemove(imdbID);
   },
+
   _rankValidate(rank) {
     const {imdbID, onRankValidate} = this.props;
     onRankValidate(imdbID, rank);
@@ -54,15 +56,15 @@ const Item = reactStamp(React).compose({
     const { imdbID, Poster, Title, Type, Year, rank, cols } = this.props,
           crdCls = "card " + (rank ? "ranked" : ""),
           colCls = "col-sm-" + Math.floor(12 / cols);
+          // <a className="link-button" href={"http://www.imdb.com/title/" + imdbID} target="_blank">
+          //   <img src="/img/imdb.png"/>
+          // </a>
     return (
       <div className={colCls}>
         <div className={crdCls}>
           <div className="card-img-top">
             <a href={"http://www.imdb.com/title/" + imdbID} target="_blank">
               <img src={Poster && (Poster != "N/A") ? Poster : "/img/no-poster.jpg"} alt={Title}/>
-            </a>
-            <a className="link-button" href={"http://www.imdb.com/title/" + imdbID} target="_blank">
-              <img src="/img/imdb.png"/>
             </a>
           </div>
           <div className="card-block">

@@ -38,7 +38,7 @@ const localStore   = {
 }
 
 const defaultState = {
-  term: 'star',
+  term: '',
   isFetching: false,
   result: [],
   movies: localStore.get(),

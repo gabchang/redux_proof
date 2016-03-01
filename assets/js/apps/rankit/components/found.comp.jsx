@@ -23,7 +23,7 @@ const Found = reactStamp(React)
     },
 
     componentDidMount() {
-      this.props.loadItems(this.props.term);
+      // this.props.loadItems(this.props.term);
     },
 
     componentWillReceiveProps(nextProps) {

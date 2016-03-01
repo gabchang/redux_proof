@@ -8,8 +8,10 @@ const {
 
 const Body = ({lastUpdated, isFetching}) => (
   <div>
-    <div className="small">
+    <div className="small text-xs-center m-b-1">
       {
+        isFetching &&
+        <span className="color-danger">LOADING...</span> ||
         lastUpdated &&
         <span>
           Last search at {new Date(lastUpdated).toLocaleTimeString()}.
@@ -18,12 +20,8 @@ const Body = ({lastUpdated, isFetching}) => (
       }
     </div>
     <div>
-      {
-        isFetching &&
-        <h3>LOADING...</h3> ||
-          <Items cols={6}/>
-        }
-      </div>
+      { !isFetching && <Items cols={6}/> }
+    </div>
   </div>
 );
 

@@ -4,12 +4,12 @@ import Found from './containers/found.cont.jsx';
 import { Link } from 'react-router';
 
 const RankitPage = () => (
-  <div className="rankit">
+  <article className="rankit">
     <header>
       <h1>
         Rank movies
         <div className="pull-xs-right">
-          <Link to="/myrank" className="small btn-link">My rank</Link>
+          <Link to="/myrank" className="small btn btn-link">My rank</Link>
         </div>
       </h1>
     </header>
@@ -19,7 +19,7 @@ const RankitPage = () => (
     <section>
       <Found />
     </section>
-  </div>
+  </article>
 )
 
 export default RankitPage;
