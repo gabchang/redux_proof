@@ -11,6 +11,7 @@ var deps = {
   'redux'       : { exp: false, imp: false },
   'react-redux' : { exp: false, imp: false },
   'jquery'      : { exp: 'jQuery', imp: false },
+  'tether'      : { exp: 'Tether', imp: false },
   'bootstrap'   : { exp: false, imp: false }
 };
 

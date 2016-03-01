@@ -1,0 +1,84 @@
+.rankit {
+
+  .card {
+    max-width: 20em;
+    position: relative;
+
+    .card-img-top {
+      position: relative;
+      height: 15em;
+      overflow: hidden;
+
+      img { width: 100%; }
+
+      .link-button {
+        position: absolute;
+        bottom: .4em;
+        right: .4em;
+        opacity: 0;
+        transition: opacity 400ms;
+
+        img { height: 1.4em; width: auto; }
+      }
+
+      &:hover {
+        .link-button { opacity: 1; }
+      }
+    }
+
+    .card-title {
+      height: 2.3em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-block {
+      height: 6em;
+    }
+
+
+    &.ranked {
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+  }
+
+  .col-sm-2 .card .card-img-top { height: 8em; }
+  .col-sm-3 .card .card-img-top { height: 15em; }
+  .col-sm-4 .card .card-img-top { height: 20em; }
+  .col-sm-6 .card .card-img-top { height: 25em; }
+
+
+  /** Pagination **/
+  .pagination {
+    user-select: none;
+    .page-link { user-select: none; text-decoration: none; }
+  }
+
+
+  /** Render as star rating : ★★★☆☆ **/
+  /** BEWARE ! Direction is RTL => values must be printed in reverse order ! */
+  .stars {
+    direction: rtl;
+    white-space: nowrap;
+
+    i {
+      user-select: none;
+      -webkit-user-select: none;
+      color: $gray-light;
+      cursor: pointer;
+
+      &.active, &:hover {
+        color: $brand-warning;
+         ~ i { color: $brand-warning; }
+      }
+
+      &.remove {
+        margin-left: 8px;
+        &:hover {
+        ~ i { color: $gray-lighter !important; }
+        }
+      }
+    }
+  }
+
+}

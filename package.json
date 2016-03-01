@@ -1,6 +1,6 @@
 {
-  "name": "redux_proof",
-  "version": "1.0.0",
+  "name": "rankit",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
   "author": "A. Mélon <paztaga@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
     "bunyan": "^1.5.1",
     "bunyan-request-logger": "^1.0.2",
     "classnames": "^2.2.1",
@@ -36,7 +37,9 @@
     "express-error-handler": "^1.0.1",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.1.4",
-    "ramda": "^0.18.0",
+    "material-design-icons": "^2.2.0",
+    "normalizr": "^2.0.0",
+    "ramda": "^0.19.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-loader": "^2.0.0",
@@ -46,8 +49,10 @@
     "react-stamp": "^0.3.0",
     "redux": "^3.3.1",
     "redux-freeze-state": "^1.0.0",
+    "redux-logger": "^2.5.2",
     "redux-thunk": "^1.0.3",
-    "stampit": "^2.1.1"
+    "stampit": "^2.1.1",
+    "tether": "^1.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

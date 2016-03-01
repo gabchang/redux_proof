@@ -1,19 +1,23 @@
 {
-  "ecmaFeatures": {
-    "blockBindings": true,
-    "forOf": true,
-    "jsx": true,
-    "destructuring": true,
-    "spread": true,
-    "arrowFunctions": true,
-    "blockBindings": true,
-    "modules": true
+  "parserOptions": {
+    sourceType: "module",
+    ecmaVersion: 6,
+    # following replaced by ecmaVersion: 6
+    # "blockBindings": true,
+    # "forOf": true,
+    # "destructuring": true,
+    # "spread": true,
+    # "arrowFunctions": true,
+    # "modules": true
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "plugins": [
     "react"
   ],
   "rules": {
-    "semi": 1,
+    # "semi": 1,
     "no-extra-semi": 1,
     "semi-spacing": 1,
     "no-trailing-spaces": 1,
@@ -35,9 +39,7 @@
     "es6" : true
   },
   "globals": {
-    "rootRequire": true
-  },
-  "plugins": [
-    "react"
-  ]
+    "rootRequire": true,
+    "fetch" : true
+  }
 }

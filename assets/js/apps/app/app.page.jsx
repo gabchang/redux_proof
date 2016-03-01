@@ -8,15 +8,16 @@ const App = ({ location, children }) => {
   return (
     <div>
       <div className="container">
-        <nav className="navbar navbar-fixed-top navbar-dark bg-inverse">
-          <div className="nav navbar-nav">
-            <a className="navbar-brand" href="#">My super redux app</a>
+        <nav className="navbar navbar-fixed-top navbar-dark">
+          <div className="nav nav-inline navbar-nav">
+            <a className="navbar-brand" href="#">RedUX</a>
             <Link to="/todo" className={classnames('nav-item nav-link', {active: pathname == '/todo'})}>Todo</Link>
             <Link to="/reddit" className={classnames('nav-item nav-link', {active: pathname == '/reddit'})}>Reddit</Link>
+            <Link to="/rankit" className={classnames('nav-item nav-link', {active: pathname == '/rankit'})}>Rank-it</Link>
           </div>
         </nav>
       </div>
-      <div style={{marginTop: '3.5em'}}>
+      <div className="container" style={{marginTop: '4em'}}>
         {children}
       </div>
     </div>

@@ -1,14 +1,14 @@
 /* globals document */
 
-import React from 'react';
+// import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import configureStore from 'store/configure_store';
-import { App, Todo, Reddit } from 'apps';
-import { addTodo } from 'actions/todo.act';
-import { fetchPostsIfNeeded } from 'actions/reddit.act';
+import { App, Todo, Reddit, Rankit, MyRank } from 'apps';
+// import { addTodo } from 'actions/todo.act';
+// import { fetchPostsIfNeeded } from 'actions/reddit.act';
 
 const store = configureStore(hashHistory);
 
@@ -23,6 +23,8 @@ render(
       <Route path="/" component={App}>
         <Route path="todo" component={Todo}/>
         <Route path="reddit" component={Reddit}/>
+        <Route path="rankit" component={Rankit}/>
+        <Route path="myrank" component={MyRank}/>
       </Route>
     </Router>
   </Provider>,

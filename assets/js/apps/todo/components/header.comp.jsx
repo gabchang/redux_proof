@@ -35,10 +35,7 @@ Header.propTypes = {
 
 const Toggle = ({
   showToggle
-}) => {
-  if (showToggle) return (<span>&#10004;</span>);
-  return (<span>&nbsp;&nbsp;&nbsp;</span>);
-};
+}) => (<i className="mi">{ showToggle ? 'check' : 'add' }</i>);
 
 Toggle.propTypes = {
   showToggle: bool
