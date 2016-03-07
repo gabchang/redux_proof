@@ -24,7 +24,14 @@ const Items = ({
       transitionAppearTimeout={2000}
       transitionEnterTimeout={2000}
       transitionLeaveTimeout={300}>
-    { items.map( (item) => ( <Item key={item.imdbID} {...item} cols={cols} onRankValidate={onRankValidate} onRankRemove={onRankRemove}/>)) }
+    {
+      items.map( (item, i) => (
+        <Item key={item.imdbID} {...item}
+              cols={cols}
+              onRankValidate={onRankValidate}
+              onRankRemove={onRankRemove} i={i}/>
+      ))
+    }
   </ReactCSSTransitionGroup>
 )
 

@@ -1,5 +1,3 @@
-import React from 'react';
-import R     from 'ramda';
 import { connect } from 'react-redux';
 import Found from '../components/found.comp.jsx';
 import { setPage, fetchItems } from 'actions/rankit.act';
@@ -7,7 +5,7 @@ import { setPage, fetchItems } from 'actions/rankit.act';
 const perPage = 10;
 
 const mapStateToProps = (state) => {
-  const { rankitSearch: { term, result, totalResults, page } } = state;
+  const { rankitSearch: { term, totalResults, page } } = state;
         // nb    = result && R.length(result);
 
   return {

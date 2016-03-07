@@ -3,14 +3,17 @@
 
   padding: 20px 0;
 
-  a, a:link { text-decoration: none; }
+  a,
+  a:link {
+    text-decoration: none;
+  }
 
   .card {
     max-width: 20em;
     position: relative;
 
     .card-img-top {
-      position: absolute;
+      // position: absolute;
       height: 15em;
       overflow: hidden;
 
@@ -43,7 +46,7 @@
 
 
     &.ranked {
-      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
     }
   }
 
@@ -73,22 +76,21 @@
 
       &.active, &:hover {
         color: $brand-warning;
-         ~ i { color: $brand-warning; }
+        ~ i { color: $brand-warning; }
       }
 
       &.remove {
         margin-left: 8px;
-        &:hover {
-        ~ i { color: $gray-lighter !important; }
-        }
+
+        &:hover ~ i { color: $gray-lighter; }
       }
     }
   }
 
 }
 
-  /** Items list transitions **/
-
+/** Items list transitions **/
+/*
 @mixin itemlist-td {
   &:nth-child(1)  { transition-delay: 0.1s; }
   &:nth-child(2)  { transition-delay: 0.2s; }
@@ -106,10 +108,11 @@
   &:nth-child(14) { transition-delay: 1.4s; }
   &:nth-child(15) { transition-delay: 1.5s; }
 }
+*/
 
 .itemlist-enter {
-  opacity: 0.01;
-  @include itemlist-td;
+  opacity: .01;
+  /*@include itemlist-td;*/
 }
 
 .itemlist-enter.itemlist-enter-active {
@@ -124,15 +127,15 @@
 }
 
 .itemlist-leave.itemlist-leave-active {
-  opacity: 0.01;
+  opacity: .01;
   transition-property: opacity ;
   transition-duration: 300ms ;
   transition-timing-function: ease-in;
 }
 
 .itemlist-appear {
-  opacity: 0.01;
-  @include itemlist-td;
+  opacity: .01;
+  /*@include itemlist-td;*/
 }
 
 .itemlist-appear.itemlist-appear-active {

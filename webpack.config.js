@@ -1,10 +1,10 @@
-var path       = require('path');
+// var path       = require('path');
 var webpack    = require('webpack');
 
 // var srvHost         = 'http://localhost:8081',
 //     publicPath      = srvHost+'/bundle/';
 
-var node_modules_dir = path.join(__dirname, 'node_modules');
+// var node_modules_dir = path.join(__dirname, 'node_modules');
 var deps = {
   'react'       : { exp: 'React', imp: false },
   'react-dom'   : { exp: false, imp: false },
