@@ -1,0 +1,9 @@
+
+
+@mixin elementShadow($position:outset) {
+  box-shadow: 0 1px 2px transparentize($gray-dark, .8) $position;
+}
+
+@mixin elementBorder {
+  border-radius: $border-radius-sm;
+}

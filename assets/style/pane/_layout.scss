@@ -1,0 +1,125 @@
+
+@import "bootstrap/scss/variables";
+
+/** LEVEL 0 LAYOUT
+------------------------------------------------------------------------------*/
+
+.wrapper {
+  padding-left: $aside-width;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $aside-width;
+
+  // overflow: hidden;
+  &:before, &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &:before {
+    background-image: url(/img/bg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: grayscale(.8); // @remove : autoprefix
+    filter: grayscale(.8);
+  }
+
+  &:after {
+    background-image: linear-gradient(to bottom, $aside-bg-from, $aside-bg-to);
+    opacity: .75;
+  }
+
+}
+
+#main {
+  margin: $spacer 0;
+}
+
+/** LEVEL 1 LAYOUT
+------------------------------------------------------------------------------*/
+
+#nav-top {
+  @include elementShadow(inset);
+  margin: 0;
+  padding: $menu-padding-v 0;
+  background: transparentize(darken($brand-primary, 10), .5);
+  &, h3, h4, h5, h6 { color: white; }
+}
+
+.nav-brand {
+  display: block;
+  margin: $menu-padding-v $menu-padding-h;
+  background: transparent url(/logo/logo-lt.svg) center center no-repeat;
+  font-size: 1.3rem;
+  &, &:hover, &:active, &:link, &:visited { @include text-hide; }
+}
+
+.profile {
+  margin: $menu-padding-v 0;
+  padding: 0 $menu-padding-h;
+  text-align: center;
+
+  &-img {
+    margin: $menu-padding-v $menu-padding-h * 4;
+
+    img {
+      @include elementShadow;
+      max-width: 100%;
+      border-radius: 50%;
+    }
+
+  }
+
+  &-title    { margin: $menu-padding-v 0 0; font-weight: 400; }
+  &-subtitle { opacity: .8; font-weight: 200; }
+
+}
+
+
+#menu {
+  padding-bottom: $menu-padding-v;
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-pills {
+
+    .nav-link {
+      font-size: .95rem;
+      font-weight: $menu-font-weight;
+      transition: background 300ms ease-out;
+      white-space: no-wrap;
+
+      &.active, &:hover {
+        &, &:focus, &:hover, &:visited {
+          background: transparentize(white, .7);
+        }
+      }
+
+      .mi {
+        font-size: 1.5em;
+        vertical-align: bottom;
+        margin-left: -.25em;
+        padding-right: .25em;
+      }
+    }
+
+  }
+
+}
+
+/** LEVEL N - Should not be here ;)
+------------------------------------------------------------------------------*/

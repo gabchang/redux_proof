@@ -1,0 +1,14 @@
+.dashboard {
+
+  &-case {
+    @include elementShadow;
+    @include elementBorder;
+    background: white;
+    border-radius: $border-radius;
+  }
+
+  .list-group {
+    font-size: .9rem;
+  }
+
+}

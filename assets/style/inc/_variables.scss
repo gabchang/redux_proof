@@ -1,0 +1,44 @@
+
+/** Re-assign bootstrap variables **/
+
+$brand-primary: #00BCD6;
+$border-radius: 2px;
+
+$body-bg: #FAFAFA;
+
+// $font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Roboto", "Cambria";
+// $font-family-base: $font-family-sans-serif !default;
+// $headings-font-family:   inherit;
+// $headings-font-family: QuickSand, Helvetica, Verdana, Sans-Serif;
+$headings-font-weight: 200;
+$headings-color: #373a3c;
+
+// $btn-font-weight:                normal !default;
+// $label-font-weight:
+// $alert-link-font-weight:
+// $close-font-weight:
+// $display1-weight:             300 !default;
+// $display2-weight:             300 !default;
+// $display3-weight:             300 !default;
+// $display4-weight:             300 !default;
+// $headings-font-weight:       500 !default;
+// $lead-font-weight:           300 !default;
+// $dt-font-weight:              bold !default;
+// $nested-kbd-font-weight:      bold !default;
+
+/** Import defaults from bootstrap **/
+
+@import "bootstrap/scss/_variables.scss";
+
+/** Application-wide variables **/
+
+// Aside
+$aside-width  : 240px;
+$aside-bg-from: transparentize($brand-primary, 0.1);
+$aside-bg-to  : transparentize($brand-primary, .2);
+
+// Menu (Aside nav)
+$menu-padding-h  : $navbar-padding-horizontal;
+$menu-padding-v  : $navbar-padding-vertical;
+$menu-font-weight: 300;

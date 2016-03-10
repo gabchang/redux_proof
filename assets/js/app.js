@@ -6,7 +6,7 @@ import { Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import configureStore from 'store/configure_store';
-import { App, Todo, Reddit, Rankit, MyRank } from 'apps';
+import { App, Todo, Reddit, Rankit, MyRank, Dashboard } from 'apps';
 // import { addTodo } from 'actions/todo.act';
 // import { fetchPostsIfNeeded } from 'actions/reddit.act';
 
@@ -25,6 +25,7 @@ render(
         <Route path="reddit" component={Reddit}/>
         <Route path="rankit" component={Rankit}/>
         <Route path="myrank" component={MyRank}/>
+        <Route path="dashboard" component={Dashboard}/>
       </Route>
     </Router>
   </Provider>,

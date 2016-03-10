@@ -1,14 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,400,500,700,900);
+
+@import "./inc/_variables.scss";
+@import "./inc/_mixins.scss";
+
+@import "bootstrap/scss/bootstrap";
+@import "./pane/_layout.scss";
 @import "./inc/_common.scss";
+
 @import "./inc/_icons.scss";
+
 @import "./inc/_todo.scss";
 @import "./inc/_rankit.scss";
 
-body {
-  //background-color: blue;
-}
-
-a, a:link { cursor: pointer; }
-
-.navbar-dark {
-  background-color: $brand-danger;
-}
+@import "./inc/_dashboard.scss";
+@import "./inc/_chart.scss";
+@import "./inc/_timeline.scss";

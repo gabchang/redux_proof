@@ -17,14 +17,14 @@ rules:
   single-line-per-selector: 0
 
   # Disallows
-  no-color-keywords: 1
-  no-color-literals: 1
+  no-color-keywords: 0
+  no-color-literals: 0
   no-css-comments: 0
   no-debug: 1
   no-duplicate-properties: 1
   no-empty-rulesets: 1
   no-extends: 0
-  no-ids: 1
+  no-ids: 0
   no-important: 3
   no-invalid-hex: 1
   no-mergeable-selectors: 1
@@ -46,7 +46,7 @@ rules:
   class-name-format: 1
   function-name-format: 1
   id-name-format: 0
-  mixin-name-format: 1
+  mixin-name-format: 0
   placeholder-name-format: 1
   variable-name-format: 1
 
@@ -70,7 +70,7 @@ rules:
 
   # Inner Spacing
   space-after-comma: 1
-  space-before-colon: 1
+  space-before-colon: 0
   space-after-colon: 1
   space-before-brace: 1
   space-before-bang: 1

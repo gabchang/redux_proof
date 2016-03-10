@@ -1,0 +1,108 @@
+// @import "./variables";
+
+.timeline {
+  padding: $nav-link-padding;
+
+  .blockquote {
+    padding-top: 0;
+    border-left-width: 3px;
+  }
+  // &-vertical {}
+
+  &-day {
+    color: $brand-primary;
+    background: white;
+    margin: 0 0 0 $spacer*-1.5;
+    padding: $spacer 0;
+  }
+
+  &-event, &-info, &-type {
+    font-size: .9rem;
+  }
+
+  &-type {
+    color: $gray-light;
+    font-size: .9rem;
+    font-weight: 300;
+    background: white;
+    margin-left: $spacer*-1.6;
+
+    .mi {
+      font-size: 1.5em;
+      vertical-align: bottom;
+      margin-right: $spacer/3;
+    }
+  }
+
+  &-info {
+    color: $gray-light;
+  }
+
+}
+
+// .group {
+//
+//   &-container {
+//     display: table;
+//     width: 100%;
+//   }
+//
+//   &-row {
+//     display: table-row;
+//   }
+//
+//   &-cell {
+//     display: table-cell;
+//
+//     &-title {
+//
+//     }
+//
+//     &-subtitle {
+//       font-size: .9em;
+//       color: $brand-base;
+//     }
+//
+//     &-info {
+//       font-size: .8em;
+//       color: $gray-light;
+//     }
+//   }
+//
+//   &-header {
+//     font-size: 1.1em;
+//   }
+//
+// }
+//
+// .group-icon {
+//   + .group-cell, .group-cell + & {
+//     padding-left: $btn-padding-x;
+//   }
+// }
+
+// .group-timeline {
+//
+//   .list-group-item + .list-group-item {
+//     border-top: none;
+//   }
+//
+//   .group-row .group-icon {
+//     position: relative;
+//
+//
+//     &:before {
+//       position: absolute;
+//       content: "";
+//       left: 50%;
+//       width: 3px;
+//       top: 12px;
+//       bottom: 0;
+//       margin-left: -2px;
+//       // background: red;
+//       background: $gray-lighter;
+//       z-index: 0;
+//     }
+//   }
+//
+// }
